@@ -1,0 +1,1 @@
+from flaskcorsbypass import app
