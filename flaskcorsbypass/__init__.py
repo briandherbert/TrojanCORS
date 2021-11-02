@@ -27,7 +27,6 @@ def relay():
 
     return data.json()
 
-#print(sys.path)
 
 @app.route('/debug', methods = ['POST', 'GET'])
 def debug():
