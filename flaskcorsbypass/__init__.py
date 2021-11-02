@@ -7,11 +7,12 @@
 
 # if dependencies aren't found, the app may not be running from venv, can verify from the print(sys.path)
 
-from flask import Flask, request
+from flask import Flask, request, Response
 from flask_cors import CORS
 import sys
 import json
 import requests
+from say_hi import sayHi
 
 app = Flask(__name__)
 CORS(app)
@@ -26,20 +27,37 @@ def relay():
 
     return data.json()
 
-print(sys.path)
+#print(sys.path)
 
 @app.route('/debug', methods = ['POST', 'GET'])
 def debug():
+    print("hit debug")
     info = ""
-    info += "Url params " + str(request.args) + "<br>"
 
-    info += "JSON: " + str(request.get_json(force=True)) + "<br>"
-    info += "Data: " + str(request.get_data) + "<br>"
+    try:
+        info += "Url params " + str(request.args) + "<br>\n"
+    except:
+        print("no params")
+        pass
 
-    return info
+    try:
+        info += "JSON: " + str(request.get_json(force=True)) + "<br>\n"
+    except:
+        print("no json")
+        pass
+
+    try:
+        info += "Data: " + str(request.get_data()) + "<br>\n"
+    except:
+        print("no data")
+        pass
+
+    print("info " + info)
+    return Response(status=200)
 
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
 def index():
+    sayHi()
     return "Text is returned"

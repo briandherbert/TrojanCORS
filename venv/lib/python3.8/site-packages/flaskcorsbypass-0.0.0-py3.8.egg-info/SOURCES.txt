@@ -1,7 +1,0 @@
-setup.py
-flaskcorsbypass/__init__.py
-flaskcorsbypass.egg-info/PKG-INFO
-flaskcorsbypass.egg-info/SOURCES.txt
-flaskcorsbypass.egg-info/dependency_links.txt
-flaskcorsbypass.egg-info/requires.txt
-flaskcorsbypass.egg-info/top_level.txt
