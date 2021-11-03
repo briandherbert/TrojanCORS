@@ -1,8 +1,8 @@
 # To get this app working:
-# pip3 install .
-# source venv/bin/activate
-# export FLASK_APP=flaskcorsbypass.py
 # python3 -m venv venv
+# source venv/bin/activate
+# pip3 install .
+# export FLASK_APP=flaskcorsbypass.py
 # flask run --reload
 
 # if dependencies aren't found, the app may not be running from venv, can verify from the print(sys.path)
